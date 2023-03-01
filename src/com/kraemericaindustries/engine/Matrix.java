@@ -1,4 +1,5 @@
 package com.kraemericaindustries.engine;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
@@ -6,9 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
-
 public class Matrix {
-
     static ArrayList<ArrayList> truthTable = new ArrayList<>();
     static ArrayList<String> columns = new ArrayList<String>();
     static ArrayList<Integer> index = new ArrayList<>();
@@ -25,7 +24,6 @@ public class Matrix {
         truthTable.add(knownIn);
         truthTable.add(knownOut);
         truthTable.add(unknown);
-
 
         columns.add("A");
         columns.add("B");
@@ -116,23 +114,9 @@ public class Matrix {
             frequency.put(switchIndexToLetter(i), distribution[i]);
         }
     }
-
-
     public static String print() {
 
         String mostToLeastCommonLettersString = "";
-
-//		System.out.print("Column Names: ");
-//		for(String column : columns ) {
-//			System.out.print(column + "|");
-//		}
-//		System.out.println();
-
-//		System.out.print("[1]Index Position: ");
-//		for(int position : index ) {
-//			System.out.print(position + "|");
-//		}
-//		System.out.println();
 
         System.out.print("Known IN: ");
         for(String letter : knownIn) {
@@ -152,7 +136,6 @@ public class Matrix {
         }
         System.out.println();
 
-
         System.out.print("The MOST COMMON letters in the database (from MOST to LEAST) are: ");
         LinkedHashMap<String, Integer> sortedMap = frequency.entrySet()
                 .stream()
@@ -162,7 +145,6 @@ public class Matrix {
                         Map.Entry::getValue,
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new));
 
-
         System.out.println(sortedMap);
         Set<String> keys = sortedMap.keySet();
 //			System.out.println(keys);
@@ -171,7 +153,6 @@ public class Matrix {
         }
         return mostToLeastCommonLettersString;
     }
-
 
     public static String switchIndexToLetter(int index) {
 
@@ -235,15 +216,11 @@ public class Matrix {
         }
         return letter;
     }
-
     public static void insertTurn(String guess, int response) {
         turns.put(guess, response);
     }
-
     public static void identifyChangedLetters() {
 
 //        String turn1 = turns.ke
-
     }
-
 }

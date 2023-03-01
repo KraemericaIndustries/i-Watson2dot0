@@ -7,13 +7,10 @@ import com.kraemericaindustries.ui.Messages;
 import static com.kraemericaindustries.engine.AnalysisEngine.reportAnalysis;
 import static com.kraemericaindustries.engine.Matrix.insertTurn;
 import static com.kraemericaindustries.ui.Messages.welcomeMessage;
-
 public class Main {
-
     private static String dbUrl = "jdbc:sqlserver://127.0.0.1:1433;DatabaseName=watson";
     static String[] words;
     private static int response;
-
     public static void main(String[] args) throws Exception {
 
         welcomeMessage();

@@ -1,9 +1,7 @@
 package com.kraemericaindustries.io;
 
 import java.util.Scanner;
-
 public class Turn {
-
     public static String enterGuess() {
         //  System.out.println("Entering 'IO.Turn.enterInfo()' method...");  //  DEBUG
         Scanner input= new Scanner(System.in);
@@ -12,7 +10,6 @@ public class Turn {
         //  System.out.println("keyboard:capture = " + capture);            //  DEBUG
         //  System.out.println("Exiting 'MakeGuess:keyboard' method...");   //  DEBUG
         System.out.println();
-
         capture.toUpperCase();  //  Regardless of the case in the InputStream typed at the keyboard, convert the String contents of the 'guessString' variable to UPPERCASE
         return capture;
     }  //  keyboardInput()

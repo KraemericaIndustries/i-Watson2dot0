@@ -1,13 +1,7 @@
 package com.kraemericaindustries.engine;
-
 public class ResultEngine {
-
     static String changedLetters;
-
-
     public static void printResults(String[] words) {
-
-
 
         System.out.println("*****************************************************************  RESULT  ********************************************************************************************");
         System.out.println("Let's have a look at all previous turns (guess=answer): ");
@@ -34,27 +28,15 @@ public class ResultEngine {
 //			Reduce.turns();
 //		}
 
-
-
-
         System.out.println("Now let's remove ALL letters from EVERY turn that are KNOWN to be IN or OUT, and REDUCE the responses each time we remove a KNOWN letter.  This leaves (<guess>, <answer>): ");
         System.out.println(Matrix.turns);
         System.out.println("***********************************************************************************************************************************************************************");
     }
 
-
-
     private static String findChangedLetters() {
 
         int[][] turns = new int[1][25];
 
-
-
-
-
-
         return changedLetters;
     }
-
-
 }

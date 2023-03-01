@@ -5,26 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcff6131-1492-4188-9f4d-48fa081609c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FiveLetterWords.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/i-Watson2dot0.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/Setup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/AnalysisEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/GuessEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/Matrix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/ResultEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/io/InputFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/io/Turn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/io/Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Create.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Execute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Select.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/ui/Messages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/Setup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/Setup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/AnalysisEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/AnalysisEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/GuessEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/GuessEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/ResultEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/ResultEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/io/InputFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/io/InputFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/io/Turn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/io/Turn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/io/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/io/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Create.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Execute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Execute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Select.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +48,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "full.screen.before.presentation.mode": "false",
-    "last_opened_file_path": "C:/Users/bkraemer/OneDrive - Topcon/Development/Java/jdbc_drivers/mssql-jdbc-9.4.0.jre16.jar",
+    "last_opened_file_path": "C:/Users/bkraemer/OneDrive - Topcon/Development/Java/IntelliJ/i-Watson2dot0",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",

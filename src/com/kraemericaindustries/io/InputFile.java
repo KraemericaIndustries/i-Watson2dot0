@@ -9,15 +9,11 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 import com.kraemericaindustries.engine.Matrix;
-
 public class InputFile {
-
-    int test = 22;
     static char[] animationChars = new char[] {'|', '/', '-', '\\'};  //  class fields
     static int[] letterCounts = new int[26];
     static int counter;
     static String line;
-
     public static void readFile(String url) {
 
         try {
@@ -25,7 +21,6 @@ public class InputFile {
             Scanner input = new Scanner(file);
             System.out.println("Seeding known 5 letter words into the 'watson' database...");
             while (input.hasNextLine()) {
-
                 line = (input.nextLine().toUpperCase());
                 letterEnumerator(line.toUpperCase());
                 //  READ FiveLEtterWords.txt into the 'watson' database Words.tbl...

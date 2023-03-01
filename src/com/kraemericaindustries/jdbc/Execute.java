@@ -5,13 +5,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 public class Execute {
-
     static Connection conn = null;
     static Statement statement = null;
-    static ResultSet resultSet = null;
-
     static String url = "jdbc:sqlserver://localhost:1433;DatabaseName=watson;encrypt=true;trustServerCertificate=true";
     static String user = "sa";
     static String pass = "topcon";
