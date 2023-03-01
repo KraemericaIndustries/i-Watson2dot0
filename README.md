@@ -1,4 +1,4 @@
-# Watson2dot0 (WIP)
+# i-Watson2dot0 (IntelliJ project - WIP)
 Revised assistant, to play 'Dad's Infamous Word Guessing Game' - Version 2.0.0
 
 # In the beginning...
