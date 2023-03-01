@@ -17,12 +17,11 @@ public class Turn {
     public static int enterResponse() {
         //  System.out.println("Entering 'IO.Turn.enterInfo()' method...");  //  DEBUG
         Scanner input= new Scanner(System.in);
-        String capture = input.nextLine();
+        int capture = input.nextInt();
         //  input.close();
         //  System.out.println("keyboard:capture = " + capture);            //  DEBUG
         //  System.out.println("Exiting 'MakeGuess:keyboard' method...");   //  DEBUG
         System.out.println();
-        int captureInt = Integer.parseInt(capture);
-        return captureInt;
+        return capture;
     }  //  keyboardInput()
 }
