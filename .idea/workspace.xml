@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fcff6131-1492-4188-9f4d-48fa081609c3" name="Changes" comment="" />
+    <list default="true" id="fcff6131-1492-4188-9f4d-48fa081609c3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/watson.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/Setup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/Setup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/io/InputFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/io/InputFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Create.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Select.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/ui/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/ui/Messages.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,5 +80,16 @@
       <updated>1677358499210</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Select.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

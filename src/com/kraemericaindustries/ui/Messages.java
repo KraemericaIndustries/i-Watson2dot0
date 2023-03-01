@@ -1,8 +1,11 @@
 package com.kraemericaindustries.ui;
 
-import com.kraemericaindustries.Setup;
 import com.kraemericaindustries.engine.Matrix;
 import com.kraemericaindustries.jdbc.Select;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 public class Messages {
 
@@ -21,28 +24,27 @@ public class Messages {
         System.out.println("***********************************************************************************************************************************************************************");
         System.out.println();
     }
-
     public static void play() {
         System.out.println("*****************************************************************  THE GAME  ******************************************************************************************");
         System.out.println("Let's play!!!");
         System.out.println("***********************************************************************************************************************************************************************");
         System.out.println();
     }
+    public static String report() throws IOException {
 
+        Properties props = new Properties();
+        props.load(new FileInputStream("watson.properties"));
 
-    public static String report(String url) {
-
+        String url = props.getProperty("dbUrl");
 
         System.out.println("*****************************************************************  REPORT  ********************************************************************************************");
         String mostToLeastFrequentLetters = Matrix.print();  //  PRINT the Matrix.  Return a String of mostToLeastFrequentLetters to main for use in AnalysisEngine.reportAnalysis
         System.out.println("Data from previous turns: " + Matrix.turns);
-        System.out.println("There are " + Select.countWords(url) + " words remaining in the database.");
+        System.out.println("There are " + Select.countWords() + " words remaining in the database.");
         System.out.println("***********************************************************************************************************************************************************************");
         System.out.println();
         return mostToLeastFrequentLetters;
     }
-
-
     public static void printGeneralStrategies() {
         System.out.println("*****************************************************************  GENERAL STRATEGIES  ********************************************************************************");
         System.out.println("Eliminate as many MOST COMMON, UNKNOWN letters as possible (narrowing the field of possible words the most quickly)");

@@ -8,7 +8,6 @@ import static com.kraemericaindustries.engine.AnalysisEngine.reportAnalysis;
 import static com.kraemericaindustries.engine.Matrix.insertTurn;
 import static com.kraemericaindustries.ui.Messages.welcomeMessage;
 public class Main {
-    private static String dbUrl = "jdbc:sqlserver://127.0.0.1:1433;DatabaseName=watson";
     static String[] words;
     private static int response;
     public static void main(String[] args) throws Exception {
@@ -18,7 +17,7 @@ public class Main {
         Messages.play();
 
         do {
-            String mostToLeastFrequentLetters = Messages.report(dbUrl);  //  PRINT The Matrix.  Return the letter counts from the database sorted from most to least frequent in a SET.
+            String mostToLeastFrequentLetters = Messages.report();  //  PRINT The Matrix.  Return the letter counts from the database sorted from most to least frequent in a SET.
             Messages.printGeneralStrategies();
             words = reportAnalysis(mostToLeastFrequentLetters);          //  ASSESS the Report, suggest strategies, take action (Matrix.size == 0. Matrix.size == 1 and so on).
             insertTurn(Type.guess(), Type.response());					 //  Take a turn, and INSERT it into the Matrix.

@@ -1,20 +1,30 @@
 package com.kraemericaindustries.io;
 
+import com.kraemericaindustries.engine.Matrix;
+
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 import java.util.Scanner;
-
-import com.kraemericaindustries.engine.Matrix;
 public class InputFile {
     static char[] animationChars = new char[] {'|', '/', '-', '\\'};  //  class fields
     static int[] letterCounts = new int[26];
     static int counter;
     static String line;
-    public static void readFile(String url) {
+    public static void readFile() throws IOException {
+
+        Properties props = new Properties();
+        props.load(new FileInputStream("watson.properties"));
+
+        String url = props.getProperty("dbUrl");
+        String user = props.getProperty("user");
+        String password = props.getProperty("password");
 
         try {
             File file = new File("FiveLetterWords.txt");
@@ -25,7 +35,7 @@ public class InputFile {
                 letterEnumerator(line.toUpperCase());
                 //  READ FiveLEtterWords.txt into the 'watson' database Words.tbl...
                 try {
-                    Connection conn = DriverManager.getConnection(url, "sa", "topcon");  //  Establish Connection Object
+                    Connection conn = DriverManager.getConnection(url, user, password);  //  Establish Connection Object
                     Statement statement = conn.createStatement();  						 //  Create a SQL statement object to send to the database
                     counter = counter + statement.executeUpdate("insert into Words_tbl values('" + line + "')");					 //  Execute the statement object
                 } catch (SQLException e) {
