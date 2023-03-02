@@ -7,12 +7,7 @@
     <list default="true" id="fcff6131-1492-4188-9f4d-48fa081609c3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/Setup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/Setup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/io/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/io/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Create.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Select.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/ui/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/ui/Messages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watson.properties" beforeDir="false" afterPath="$PROJECT_DIR$/watson.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/io/InputFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/io/InputFile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +43,14 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JAVA&quot;
+    ]
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.kraemericaindustries.Main" />
       <module name="i-Watson2dot0" />
@@ -64,9 +64,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Java Scratch.Scratch" />
       </list>
     </recent_temporary>
   </component>
@@ -80,5 +88,31 @@
       <updated>1677358499210</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Create.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Create.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Create.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/kraemericaindustries/jdbc/Create.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

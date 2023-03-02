@@ -19,12 +19,12 @@ public class InputFile {
     static String line;
     public static void readFile() throws IOException {
 
-        Properties props = new Properties();
-        props.load(new FileInputStream("watson.properties"));
-
-        String url = props.getProperty("dbUrl");
-        String user = props.getProperty("user");
-        String password = props.getProperty("password");
+//        Properties props = new Properties();
+//        props.load(new FileInputStream("watson.properties"));
+//
+//        String url = props.getProperty("dbUrl");
+//        String user = props.getProperty("user");
+//        String password = props.getProperty("password");
 
         try {
             File file = new File("FiveLetterWords.txt");
@@ -35,7 +35,7 @@ public class InputFile {
                 letterEnumerator(line.toUpperCase());
                 //  READ FiveLEtterWords.txt into the 'watson' database Words.tbl...
                 try {
-                    Connection conn = DriverManager.getConnection(url, user, password);  //  Establish Connection Object
+                    Connection conn = DriverManager.getConnection("jdbc:sqlserver://127.0.0.1:1433;DatabaseName=watson", "sa", "topcon");  //  Establish Connection Object
                     Statement statement = conn.createStatement();  						 //  Create a SQL statement object to send to the database
                     counter = counter + statement.executeUpdate("insert into Words_tbl values('" + line + "')");					 //  Execute the statement object
                 } catch (SQLException e) {
