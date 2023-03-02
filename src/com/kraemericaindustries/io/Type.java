@@ -9,7 +9,6 @@ public class Type {
             guess = (Turn.enterGuess()).toUpperCase();
             System.out.println("You guessed: " + guess);
             if (guess.length() != 5) {
-//                System.out.println("HEY!  DUMMY!  Your guess is " + guess.length() + " letters long!  Try again, moron.");
                 StringBuilder sb = new StringBuilder("HEY!  DUMMY!  Your guess is ")
                         .append(guess.length())
                         .append(" letters long!  Try again, moron.");
@@ -25,7 +24,6 @@ public class Type {
             response = Turn.enterResponse();
             System.out.println("The response was: " + response);
             if (response > 5 || response < 0) {
-                System.out.println("HEY!  DUMMY!  Your response is " + response + ", but it MUST be 0, 1, 2, 3, 4, or 5!  Try again, moron.");
                 StringBuilder sb = new StringBuilder("HEY!  DUMMY!  Your response is ")
                         .append(response)
                         .append(", but it MUST be 0, 1, 2, 3, 4, or 5!  Try again, moron.");

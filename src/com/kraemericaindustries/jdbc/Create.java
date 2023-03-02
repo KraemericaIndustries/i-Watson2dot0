@@ -10,14 +10,7 @@ import java.sql.Statement;
 import java.util.Properties;
 
 public class Create {
-    public static void DB() throws Exception {
-
-        Properties props = new Properties();
-        props.load(new FileInputStream("watson.properties"));
-
-        String url = props.getProperty("dbUrl");
-        String user = props.getProperty("user");
-        String password = props.getProperty("password");
+    public static String DB(String url, String user, String password) throws Exception {
 
         ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "net stop mssqlserver && ping 127.0.0.1 -n 2 > nul && net start mssqlserver");
         builder.redirectErrorStream(true);
@@ -32,7 +25,7 @@ public class Create {
 
         try {
             Connection conn = DriverManager.getConnection(url, user, password);  //  Establish Connection Object
-            Statement statement = conn.createStatement();                                     //  Create a SQL statement object to send to the database
+            Statement statement = conn.createStatement();                        //  Create a SQL statement object to send to the database
             //  WORKS!
             statement.addBatch("drop database watson;"
                     + "create database watson;"
@@ -50,5 +43,10 @@ public class Create {
         System.out.println("Creating 'watson' database tables...");
         System.out.print("Words.tbl...");
         System.out.println();
+
+        StringBuilder sb = new StringBuilder(url)
+                .append(":1433;DatabaseName=watson");
+        final String dbUrl = String.valueOf(sb);
+        return dbUrl;
     }
 }
