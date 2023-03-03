@@ -1,13 +1,11 @@
 package com.kraemericaindustries;
 
+import com.kraemericaindustries.engine.Matrix;
 import com.kraemericaindustries.engine.ResultEngine;
 import com.kraemericaindustries.io.Type;
+import com.kraemericaindustries.jdbc.Database;
 import com.kraemericaindustries.ui.Messages;
 
-import java.io.FileInputStream;
-import java.util.Properties;
-
-import static com.kraemericaindustries.Setup.*;
 import static com.kraemericaindustries.engine.AnalysisEngine.reportAnalysis;
 import static com.kraemericaindustries.engine.Matrix.insertTurn;
 import static com.kraemericaindustries.ui.Messages.welcomeMessage;
@@ -16,19 +14,15 @@ public class Main {
     private static int response;
     public static void main(String[] args) throws Exception {
 
-//        Properties props = new Properties();
-//        props.load(new FileInputStream("watson.properties"));
-//
-//        String url = props.getProperty("url");
-//        String user = props.getProperty("user");
-//        String password = props.getProperty("password");
-
-        welcomeMessage();
-        database("jdbc:sqlserver://127.0.0.1", "sa", "topcon");  //  CREATE Watson DB, CREATE Words_tbl, READ FiveLetterWords.txt into DB, CREATE The Matrix and POPULATE with initial values
-        Messages.play();
+        welcomeMessage();                  //  PRINT the welcome message
+        Database.setDatabaseProperties();  //  READ in database settings from the properties file
+        Database.create();                 //  CREATE Watson DB, CREATE Words_tbl, READ FiveLetterWords.txt into DB, CREATE The Matrix and POPULATE with initial values
+        Database.readFile();               //  Seed known 5-letter words into the 'watson' database
+        Matrix.create();                   //  CREATE the Matrix/truthTable
+        Messages.play();                   //  PRINT the play game message
 
         do {
-            String mostToLeastFrequentLetters = Messages.report("jdbc:sqlserver://127.0.0.1:1433;DatabaseName=watson", "sa", "topcon");  //  PRINT The Matrix.  Return the letter counts from the database sorted from most to least frequent in a SET.
+            String mostToLeastFrequentLetters = Messages.report();  //  PRINT The Matrix.  Return the letter counts from the database sorted from most to least frequent in a SET.
             Messages.printGeneralStrategies();
             words = reportAnalysis(mostToLeastFrequentLetters);          //  ASSESS the Report, suggest strategies, take action (Matrix.size == 0. Matrix.size == 1 and so on).
             insertTurn(Type.guess(), Type.response());					 //  Take a turn, and INSERT it into the Matrix.

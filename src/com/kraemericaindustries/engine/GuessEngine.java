@@ -1,6 +1,6 @@
 package com.kraemericaindustries.engine;
 
-import com.kraemericaindustries.jdbc.Execute;
+import com.kraemericaindustries.jdbc.Database;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -34,7 +34,7 @@ public class GuessEngine {
                         .append("%' and word like '%")
                         .append(mostToLeastFrequentLetters.charAt(L - 1))
                         .append("%'");
-                ResultSet resultSet = Execute.select(String.valueOf(sb));  //  Execute the statement object
+                ResultSet resultSet = Database.select(String.valueOf(sb));  //  Execute the statement object
                 //  Process the result
                 while(resultSet.next()) {  //  ITERATE over all results returned from the SELECT statement
                     word = resultSet.getString("word");  //  SET the value of the local String variable named word to the last value returned by the SQL select statement
@@ -43,13 +43,13 @@ public class GuessEngine {
                 e.printStackTrace();
             }
             //  ADD word to array...
-            if(word != "") {	  //  IF the SELECT statement returns a result
+            if(!word.equals("")) {	  //  IF the SELECT statement returns a result
                 words[w] = word;  //  SET the current index of the words array to the word returned by the SELECT statement
                 M++;			  //  INCREMENT the substring index to the NEXT MOST COMMON letters (in an attempt to ELIMINATE the most common letter).
                 w++;			  //  INCREMENT the index to the words array
             }
             //  When NO WORD is returned, increment the letter indexes...
-            if(w > 2 && word != "" || L == mostToLeastFrequentLetters.length() - 1) {  //  IF seeking 2 words, and a word IS returned, an the end index IS NOT at the end of the letters
+            if(w > 2 && !word.equals("") || L == mostToLeastFrequentLetters.length() - 1) {  //  IF seeking 2 words, and a word IS returned, and the end index IS NOT at the end of the letters
                 M++;																   //  INCREMENT the index pointing to the START of the String of letters (to try and make a determination on the most common letter)
                 L = M + 5;															   //  RESET the index pointing to the LAST letter in the String, to the 6th most common letter in the String
             } else {																   //  ELSE word != ""

@@ -1,9 +1,10 @@
 package com.kraemericaindustries.ui;
 
 import com.kraemericaindustries.engine.Matrix;
-import com.kraemericaindustries.jdbc.Select;
+import com.kraemericaindustries.jdbc.Database;
 
-import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Messages {
 
@@ -16,7 +17,7 @@ public class Messages {
                 "See if you can guess the word!  Each time you make a guess, your opponent will respond with a number.\n" +
                 "The number represents the number of letters in your guess that appear in the word chosen by your opponent.\n" +
                 "Example:  If the opponent chooses 'LOSER' and you guess 'POSER' the response would be 4 ('O' makes 1, 'S' makes 2, 'E' makes 3, and 'R' makes 4.)\n" +
-                "Will you be able to identify your opponenet's word?\n" +
+                "Will you be able to identify your opponent's word?\n" +
                 "I'm going to help - by suggesting your most strategic plays possible!\n" +
                 "First - let me get myself set up...");
         System.out.println("***********************************************************************************************************************************************************************");
@@ -28,12 +29,20 @@ public class Messages {
         System.out.println("***********************************************************************************************************************************************************************");
         System.out.println();
     }
-    public static String report(String url, String user, String password) throws IOException {
+    public static String report() throws SQLException {
+
+        int count = 0;
+
+        ResultSet resultSet = Database.select("select count (*) from Words_tbl");  //  Execute the statement object
+        //  Process the result
+        while(resultSet.next()) {
+            count =  ((Number) resultSet.getObject(1)).intValue();
+        }
 
         System.out.println("*****************************************************************  REPORT  ********************************************************************************************");
         String mostToLeastFrequentLetters = Matrix.print();  //  PRINT the Matrix.  Return a String of mostToLeastFrequentLetters to main for use in AnalysisEngine.reportAnalysis
         System.out.println("Data from previous turns: " + Matrix.turns);
-        System.out.println("There are " + Select.countWords(url, user, password) + " words remaining in the database.");
+        System.out.println("There are " + count + " words remaining in the database.");
         System.out.println("***********************************************************************************************************************************************************************");
         System.out.println();
         return mostToLeastFrequentLetters;

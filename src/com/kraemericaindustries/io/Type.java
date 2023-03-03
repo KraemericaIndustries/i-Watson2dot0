@@ -1,9 +1,8 @@
 package com.kraemericaindustries.io;
 public class Type {
-    private static String guess;
-    private static int response;
     public static String guess() {
         //  INPUT a guess...
+        String guess;
         do {
             System.out.println("Guess a 5 letter word:");
             guess = (Turn.enterGuess()).toUpperCase();
@@ -19,6 +18,7 @@ public class Type {
     }
 
     public static int response() {
+        int response;
         do {
             System.out.println("Now, enter the response from your opponent:");
             response = Turn.enterResponse();
