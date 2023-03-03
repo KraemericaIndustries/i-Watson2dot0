@@ -8,8 +8,7 @@ import java.util.Properties;
 import java.util.Scanner;
 
 public class Database {
-    static String serverUrl;
-    static String dbUrl;
+    static String url;
     static String user;
     static String password;
     static Connection conn = null;
@@ -27,8 +26,7 @@ public class Database {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        serverUrl = props.getProperty("serverUrl");
-        dbUrl = props.getProperty("dbUrl");
+        url = props.getProperty("url");
         user = props.getProperty("user");
         password = props.getProperty("password");
     }
@@ -50,7 +48,7 @@ public class Database {
         }
 
         try {
-            conn = DriverManager.getConnection(serverUrl, user, password);  //  Establish Connection Object
+            conn = DriverManager.getConnection(url, user, password);  //  Establish Connection Object
             statement = conn.createStatement();                        //  Create a SQL statement object to send to the database
             //  WORKS!
             statement.addBatch("drop database watson;"
@@ -70,6 +68,10 @@ public class Database {
         System.out.print("Words.tbl...");
         System.out.println(" > Done!");
         System.out.println();
+
+        StringBuilder sb = new StringBuilder("jdbc:sqlserver://127.0.0.1")
+                .append(":1433;DatabaseName=watson");
+        url = String.valueOf(sb);
     }
 
     public static int statement(String sqlStatement) {
@@ -77,7 +79,7 @@ public class Database {
         int r = 0;
 
         try {
-            conn = DriverManager.getConnection(dbUrl, user, password);
+            conn = DriverManager.getConnection(url, user, password);
             statement = conn.createStatement();
             r = statement.executeUpdate(sqlStatement);
         } catch (SQLException e) {
@@ -92,7 +94,7 @@ public class Database {
         ResultSet resultSet = null;
 
         try {
-            conn = DriverManager.getConnection(dbUrl, user, password);
+            conn = DriverManager.getConnection(url, user, password);
             statement = conn.createStatement();
             resultSet = statement.executeQuery(selectQuery);
         } catch (SQLException e) {
@@ -112,7 +114,7 @@ public class Database {
                 letterEnumerator(line.toUpperCase());
                 //  READ FiveLetterWords.txt into the 'watson' database Words.tbl...
                 try {
-                    Connection conn = DriverManager.getConnection(dbUrl, user, password);  //  Establish Connection Object
+                    Connection conn = DriverManager.getConnection(url, user, password);  //  Establish Connection Object
                     Statement statement = conn.createStatement();  						 //  Create a SQL statement object to send to the database
                     counter = counter + statement.executeUpdate("insert into Words_tbl values('" + line + "')");					 //  Execute the statement object
                 } catch (SQLException e) {
