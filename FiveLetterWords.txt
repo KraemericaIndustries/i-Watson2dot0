@@ -273,6 +273,7 @@ range
 randy
 ranks
 rants
+rates
 raven
 ready
 remit

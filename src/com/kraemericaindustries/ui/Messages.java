@@ -55,4 +55,37 @@ public class Messages {
         System.out.println("***********************************************************************************************************************************************************************");
         System.out.println();
     }
+    public static void endGame(String guess) {
+
+        System.out.println("The response was 5!!!");
+        System.out.println("In the event the opponent advises that the previous guess (" + guess + ") is NOT their word, all that remains to be done is process of elimination.");
+        System.out.println("Deleting the previous guess (" + guess + ") from the database... > This many rows were DELETED from the database: " +
+                Database.statement("delete from Words_tbl where word = '" + guess + "'"));
+        System.out.println("Here are all the OTHER words in the database that can be made from these 5 letters:");
+
+        try {
+            //  SELECT a word from Words_tbl that contains EACH of the following letters
+            String query = "select * from Words_tbl where word like '%" +
+                    guess.charAt(0) +
+                    "%' and word like '%" +
+                    guess.charAt(1) +
+                    "%' and word like '%" +
+                    guess.charAt(2) +
+                    "%' and word like '%" +
+                    guess.charAt(3) +
+                    "%' and word like '%" +
+                    guess.charAt(4) +
+                    "%'";
+            ResultSet resultSet = Database.select(query);  //  Execute the statement object
+            //  Process the result
+            while(resultSet.next()) {  //  ITERATE over all results returned from the SELECT statement
+                String word = resultSet.getString("word");  //  SET the value of the local String variable named word to the last value returned by the SQL select statement
+                System.out.print(word + "\t");
+            }
+            System.out.println();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Guess each of the above (in turn) to arrive at the answer.  ");
+    }
 }

@@ -23,18 +23,18 @@ public class GuessEngine {
             try {
                 word = "";  //  INITIALIZE the local String variable to the value returned by the SQL select when no match is found in the DB.
                 //  SELECT a word from Words_tbl that contains EACH of the following letters
-                StringBuilder sb = new StringBuilder("select * from Words_tbl where word like '%")
-                        .append(mostToLeastFrequentLetters.charAt(M))
-                        .append("%' and word like '%")
-                        .append(mostToLeastFrequentLetters.charAt(M + 1))
-                        .append("%' and word like '%")
-                        .append(mostToLeastFrequentLetters.charAt(M + 2))
-                        .append("%' and word like '%")
-                        .append(mostToLeastFrequentLetters.charAt(M + 3))
-                        .append("%' and word like '%")
-                        .append(mostToLeastFrequentLetters.charAt(L - 1))
-                        .append("%'");
-                ResultSet resultSet = Database.select(String.valueOf(sb));  //  Execute the statement object
+                String sb = "select * from Words_tbl where word like '%" +
+                        mostToLeastFrequentLetters.charAt(M) +
+                        "%' and word like '%" +
+                        mostToLeastFrequentLetters.charAt(M + 1) +
+                        "%' and word like '%" +
+                        mostToLeastFrequentLetters.charAt(M + 2) +
+                        "%' and word like '%" +
+                        mostToLeastFrequentLetters.charAt(M + 3) +
+                        "%' and word like '%" +
+                        mostToLeastFrequentLetters.charAt(L - 1) +
+                        "%'";
+                ResultSet resultSet = Database.select(sb);  //  Execute the statement object
                 //  Process the result
                 while(resultSet.next()) {  //  ITERATE over all results returned from the SELECT statement
                     word = resultSet.getString("word");  //  SET the value of the local String variable named word to the last value returned by the SQL select statement

@@ -33,6 +33,7 @@ public class Main {
             insertTurn(guess, response);                            //  Take a turn, and INSERT it into the Matrix.
             ResultEngine.printResults(words);                       //  REWORK NEEDED!! PRINT AND ASSESS AGAINST MATRIX, NOT to the DB.
         } while (response < 5);
-        System.out.println("You guessed it!!!");
+        //  Response to previous guess is 5...
+        Messages.endGame(guess);
     }
 }

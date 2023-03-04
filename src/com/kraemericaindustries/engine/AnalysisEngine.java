@@ -11,11 +11,11 @@ public class AnalysisEngine {
             System.out.println("This will attempt to eliminate the MOST COMMON letter, which will narrow the field of possible words the most");
             System.out.println("Successive guesses should only vary by ONE UNKNOWN letter at a time (doing so allows us to learn the most from responses.)");
             words = GuessEngine.findWords(mostToLeastFrequentLetters, 2);
-            StringBuilder sb = new StringBuilder("I suggest playing the word ")
-                    .append(words[0])
-                    .append(" followed by playing the word ")
-                    .append(words[1])
-                    .append(".  (As determined by GuessEngine.findWords)");
+            String sb = "I suggest playing the word " +
+                    words[0] +
+                    " followed by playing the word " +
+                    words[1] +
+                    ".  (As determined by GuessEngine.findWords)";
             System.out.println(sb);
             System.out.println("***********************************************************************************************************************************************************************");
         } else if (Matrix.turns.size() == 1) {
@@ -23,9 +23,9 @@ public class AnalysisEngine {
             System.out.println("There is only 1 prior turn stored in the database.  I suggest trying to make a guess with the NEXT 5 MOST COMMON letters (2nd through 6th...)");
             System.out.println("This will attempt to eliminate the MOST COMMON letter, which will narrow the field of possible words the most");
             System.out.println("Successive guesses should only vary by ONE UNKNOWN letter at a time (doing so allows us to learn the most from responses.)");
-            StringBuilder sb = new StringBuilder("I suggest playing the word ")
-                    .append(words[1])
-                    .append(".");
+            String sb = "I suggest playing the word " +
+                    words[1] +
+                    ".";
             System.out.println(sb);
             System.out.println("***********************************************************************************************************************************************************************");
         }

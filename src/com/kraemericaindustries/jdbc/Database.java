@@ -69,9 +69,7 @@ public class Database {
         System.out.println(" > Done!");
         System.out.println();
 
-        StringBuilder sb = new StringBuilder("jdbc:sqlserver://127.0.0.1")
-                .append(":1433;DatabaseName=watson");
-        url = String.valueOf(sb);
+        url = url + ":1433;DatabaseName=watson";
     }
 
     public static int statement(String sqlStatement) {
