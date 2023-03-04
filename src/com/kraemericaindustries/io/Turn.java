@@ -24,4 +24,25 @@ public class Turn {
         System.out.println();
         return capture;
     }  //  keyboardInput()
+
+    public static boolean isGuessOpponentsWord(String guess) {
+        //  INPUT a guess...
+        boolean guessIsOpponentsWord = false;
+        String capture;
+
+        do {
+            System.out.println("Is the most recent guess (" + guess + ") your opponents word?  (yes/no)");
+
+            Scanner input = new Scanner(System.in);
+            capture = input.nextLine();
+
+            System.out.println("You typed: " + capture);
+            if (!(capture.equals("yes")) && !(capture.equals("no"))) {
+                System.out.println("HEY!  DUMMY!  You were supposed to type 'yes' or 'no' - but you typed: '" + capture + "'.  Try again, moron.");
+            } else if (capture.equals("yes")) {
+                guessIsOpponentsWord = true;
+            }
+        } while (!(capture.equals("yes")) && !(capture.equals("no")));  //  Discard guesses that are NOT 5 letters.
+        return guessIsOpponentsWord;
+    }
 }
