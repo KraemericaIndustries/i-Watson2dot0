@@ -1,9 +1,9 @@
 package com.kraemericaindustries.engine;
 public class ResultEngine {
     static String changedLetters;
-    public static void printResults(String[] words) {
+    public static void printResults(String[] words, int counter) {
 
-        System.out.println("*****************************************************************  RESULT  ********************************************************************************************");
+        System.out.println("*****************************************************************  RESULT # " + counter + "  ********************************************************************************************");
         System.out.println("Let's have a look at all previous turns (guess=answer): ");
         System.out.println(Matrix.turns);
 
@@ -30,7 +30,7 @@ public class ResultEngine {
 
         System.out.println("Now let's remove ALL letters from EVERY turn that are KNOWN to be IN or OUT, and REDUCE the responses each time we remove a KNOWN letter.  This leaves (<guess>, <answer>): ");
         System.out.println(Matrix.turns);
-        System.out.println("***********************************************************************************************************************************************************************");
+        System.out.println("*************************************************************************************************************************************************************************");
     }
 
     private static String findChangedLetters() {

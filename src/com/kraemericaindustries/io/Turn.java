@@ -31,7 +31,7 @@ public class Turn {
         String capture;
 
         do {
-            System.out.println("Is the most recent guess (" + guess + ") your opponents word?  (yes/no)");
+            System.out.print("Is the most recent guess (" + guess + ") your opponents word?  (yes/no): ");
 
             Scanner input = new Scanner(System.in);
             capture = input.nextLine();

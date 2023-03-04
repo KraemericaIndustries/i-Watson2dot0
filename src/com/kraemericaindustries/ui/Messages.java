@@ -32,7 +32,7 @@ public class Messages {
         System.out.println("***********************************************************************************************************************************************************************");
         System.out.println();
     }
-    public static String report() throws SQLException {
+    public static String report(int counter) throws SQLException {
 
         int count = 0;
 
@@ -42,11 +42,11 @@ public class Messages {
             count =  ((Number) resultSet.getObject(1)).intValue();
         }
 
-        System.out.println("*****************************************************************  REPORT  ********************************************************************************************");
+        System.out.println("*****************************************************************  REPORT # " + counter + "  ********************************************************************************************");
         String mostToLeastFrequentLetters = Matrix.print();  //  PRINT the Matrix.  Return a String of mostToLeastFrequentLetters to main for use in AnalysisEngine.reportAnalysis
         System.out.println("Data from previous turns: " + Matrix.turns);
         System.out.println("There are " + count + " words remaining in the database.");
-        System.out.println("***********************************************************************************************************************************************************************");
+        System.out.println("*************************************************************************************************************************************************************************");
         System.out.println();
         return mostToLeastFrequentLetters;
     }
@@ -58,7 +58,7 @@ public class Messages {
         System.out.println("***********************************************************************************************************************************************************************");
         System.out.println();
     }
-    public static void endGame(String guess) throws SQLException {
+    public static void endGame(String guess, int counter) throws SQLException {
 
         int count = 0;  //  Counter for the number of words remaining in the DB
         boolean guessIsOpponentsWord;
@@ -69,7 +69,7 @@ public class Messages {
            guessIsOpponentsWord = isGuessOpponentsWord(guess);
 
            if (guessIsOpponentsWord) {
-               System.out.println("Game over man!!!");
+               System.out.println("Game over man!!!  The opponents word was determined in " + (counter - 1) + " turns.");
                break;
            } else {
                //  DELETE all words that DO NOT contain the letters from the previous guess from the DB...
@@ -114,8 +114,9 @@ public class Messages {
                    e.printStackTrace();
                }
                System.out.println("Guess each of the above (in turn) to arrive at the answer.  ");
-               guess = Type.guess();
+               guess = Type.guess(counter);
            }
+           counter++;
        } while (!guessIsOpponentsWord);
     }
 }

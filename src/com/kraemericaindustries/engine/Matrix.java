@@ -136,7 +136,7 @@ public class Matrix {
         }
         System.out.println();
 
-        System.out.print("The MOST COMMON letters in the database (from MOST to LEAST) are: ");
+        System.out.println("The MOST COMMON letters in the database (from MOST to LEAST) are: ");
         LinkedHashMap<String, Integer> sortedMap = frequency.entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))

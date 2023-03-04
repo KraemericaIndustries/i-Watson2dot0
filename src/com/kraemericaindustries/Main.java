@@ -16,6 +16,7 @@ public class Main {
 
         String guess;
         int response;
+        int counter = 1;
 
         welcomeMessage();                  //  PRINT the welcome message
         Database.setDatabaseProperties();  //  READ in database settings from the properties file
@@ -25,15 +26,16 @@ public class Main {
         Messages.play();                   //  PRINT the play game message
 
         do {
-            String mostToLeastFrequentLetters = Messages.report();  //  PRINT The Matrix.  Return the letter counts from the database sorted from most to least frequent in a SET.
+            String mostToLeastFrequentLetters = Messages.report(counter);  //  PRINT The Matrix.  Return the letter counts from the database sorted from most to least frequent in a SET.
             Messages.printGeneralStrategies();
             words = reportAnalysis(mostToLeastFrequentLetters);     //  ASSESS the Report, suggest strategies, take action (Matrix.size == 0. Matrix.size == 1 and so on).
-            guess = Type.guess();                                   //  TYPE a guess
-            response = Type.response();                             //  TYPE the response
+            guess = Type.guess(counter);                            //  TYPE a guess
+            response = Type.response(counter);                             //  TYPE the response
             insertTurn(guess, response);                            //  Take a turn, and INSERT it into the Matrix.
-            ResultEngine.printResults(words);                       //  REWORK NEEDED!! PRINT AND ASSESS AGAINST MATRIX, NOT to the DB.
+            ResultEngine.printResults(words, counter);                       //  REWORK NEEDED!! PRINT AND ASSESS AGAINST MATRIX, NOT to the DB.
+            counter++;
         } while (response < 5);
         //  Response to previous guess is 5...
-        Messages.endGame(guess);
+        Messages.endGame(guess, counter);
     }
 }
