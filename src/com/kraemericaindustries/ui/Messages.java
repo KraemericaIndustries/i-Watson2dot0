@@ -55,28 +55,43 @@ public class Messages {
         System.out.println("***********************************************************************************************************************************************************************");
         System.out.println();
     }
-    public static void endGame(String guess) {
+    public static void endGame(String guess) throws SQLException {
+
+        int count = 0;  //  Counter for the number of words remaining in the DB
 
         System.out.println("The response was 5!!!");
-        System.out.println("In the event the opponent advises that the previous guess (" + guess + ") is NOT their word, all that remains to be done is process of elimination.");
-        System.out.println("Deleting the previous guess (" + guess + ") from the database... > This many rows were DELETED from the database: " +
-                Database.statement("delete from Words_tbl where word = '" + guess + "'"));
-        System.out.println("Here are all the OTHER words in the database that can be made from these 5 letters:");
 
+        //  DELETE all words that DO NOT contain the letters from the previous guess from the DB...
+        String query = "delete from Words_tbl where word NOT like '%" +
+                guess.charAt(0) +
+                "%' or word NOT like '%" +
+                guess.charAt(1) +
+                "%' or word NOT like '%" +
+                guess.charAt(2) +
+                "%' or word NOT like '%" +
+                guess.charAt(3) +
+                "%' or word NOT like '%" +
+                guess.charAt(4) +
+                "%'";
+        System.out.println("Deleting ALL words that DO NOT contain the letters in '" + guess + "' from the database...");
+        System.out.println(Database.statement(query) + " rows DELETED from the database.");
+
+        //  COUNT the number of words remaining in the DB...
+        ResultSet resultSet = Database.select("select count (*) from Words_tbl");  //  Execute the statement object
+        //  Process the result
+        while(resultSet.next()) {
+            count =  ((Number) resultSet.getObject(1)).intValue();
+        }
+        System.out.println(count + " word(s) remaining in the database.");
+        System.out.println();
+
+        // PROCESS of ELIMINATION...
+        System.out.println("In the event the opponent advises that the previous guess (" + guess + ") is NOT their word, all that remains to be done is process of elimination.");
+        System.out.println("Deleting the previous guess (" + guess + ") from the database...");
+        System.out.println(Database.statement("delete from Words_tbl where word = '" + guess + "'") + " row(s) DELETED from the database.");
+        System.out.println("Here are all the OTHER words in the database that can be made from these 5 letters:");
         try {
-            //  SELECT a word from Words_tbl that contains EACH of the following letters
-            String query = "select * from Words_tbl where word like '%" +
-                    guess.charAt(0) +
-                    "%' and word like '%" +
-                    guess.charAt(1) +
-                    "%' and word like '%" +
-                    guess.charAt(2) +
-                    "%' and word like '%" +
-                    guess.charAt(3) +
-                    "%' and word like '%" +
-                    guess.charAt(4) +
-                    "%'";
-            ResultSet resultSet = Database.select(query);  //  Execute the statement object
+            resultSet = Database.select("select * from Words_tbl");  //  Execute the statement object
             //  Process the result
             while(resultSet.next()) {  //  ITERATE over all results returned from the SELECT statement
                 String word = resultSet.getString("word");  //  SET the value of the local String variable named word to the last value returned by the SQL select statement
