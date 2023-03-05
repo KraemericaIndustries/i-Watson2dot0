@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fcff6131-1492-4188-9f4d-48fa081609c3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/ResultEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/engine/ResultEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/io/Turn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/io/Turn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/io/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/io/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FiveLetterWords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FiveLetterWords.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/kraemericaindustries/ui/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kraemericaindustries/ui/Messages.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,9 +78,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.journaldev.files.scratch" />
+      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.journaldev.files.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Java Scratch.scratch" />
         <item itemvalue="Java Scratch.Scratch" />
       </list>
     </recent_temporary>

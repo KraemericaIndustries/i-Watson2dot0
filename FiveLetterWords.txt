@@ -273,7 +273,6 @@ range
 randy
 ranks
 rants
-rates
 raven
 ready
 remit
@@ -407,3 +406,5 @@ winds
 windy
 witch
 zebra
+RATES
+CRAPS
