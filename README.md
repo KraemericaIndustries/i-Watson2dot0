@@ -1,5 +1,6 @@
 # i-Watson2dot0 (IntelliJ project - WIP)
-Revised assistant, to play 'Dad's Infamous Word Guessing Game' - Version 2.0.0
+Revised assistant, to play 'Dad's Infamous Word Guessing Game' - Version 2.0.0  
+![i-Watson2dot0](https://user-images.githubusercontent.com/124509173/230769717-d2512875-c4ec-4daf-aea1-52ebf71658a0.png)
 
 # In the beginning...
 I've always been a bit of a wordsmith. Growing up, I had a strong vocabulary and spelling skills, and I always enjoyed crafty, eloquent humor and saw (and still see) a strong use of spoken language as a way to convey thoughtfulness, and intellect.
